@@ -106,6 +106,7 @@ data out of a webservice::
     from fabric.api import run
 
     def webservice_read():
+        "read from a webservice"
         objects = urlopen('http://my/web/service/?foo=bar').read().split()
         print(objects)
 
@@ -115,8 +116,8 @@ happens if we run :option:`fab --list <-l>` on this fabfile::
     $ fab --list
     Available commands:
 
-      my_task    List some directories.   
-      urlopen    urlopen(url [, data]) -> open file-like object
+        urlopen          urlopen(url [, data]) -> open file-like object
+        webservice_read  List some directories.   
 
 Our fabfile of only one task is showing two "tasks", which is bad enough, and
 an unsuspecting user might accidentally try to call ``fab urlopen``, which
@@ -131,6 +132,7 @@ For reference, here's the recommended way to do it::
     from fabric.api import run
 
     def webservice_read():
+        "read from a webservice"
         objects = urllib.urlopen('http://my/web/service/?foo=bar').read().split()
         print(objects)
 
