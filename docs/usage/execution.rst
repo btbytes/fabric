@@ -117,7 +117,7 @@ happens if we run :option:`fab --list <-l>` on this fabfile::
     Available commands:
 
         urlopen          urlopen(url [, data]) -> open file-like object
-        webservice_read  List some directories.   
+        webservice_read  read from a webservice
 
 Our fabfile of only one task is showing two "tasks", which is bad enough, and
 an unsuspecting user might accidentally try to call ``fab urlopen``, which
